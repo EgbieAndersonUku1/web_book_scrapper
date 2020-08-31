@@ -12,7 +12,9 @@ class ProductParser(object):
         self.site_url = site_url
 
     def get_all_books(self):
-        """Returns a list of book objects for the books found on this site"""
+        """Returns a list of book objects for the books found on this site. Each book object
+           contains the book title, UPC, taxes, price including and excluding tax, etc.
+        """
         self._parse_books()
 
         books = []
