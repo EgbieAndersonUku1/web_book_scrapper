@@ -15,10 +15,10 @@ class BookParser(object):
         self._soup_handler = None
         self._row_elements = []
         self._table_data = {}
-        self._initalize_ckass = False
+        self._initalize_class = False
 
     def __repr__(self):
-        if not self._initalize_ckass:
+        if not self._initalize_class:
             return f"BookParser: <url: {self.url}>"
         return f"<BookParser obj: title: <{self.title.title()}>"
 
@@ -29,7 +29,7 @@ class BookParser(object):
         page = requests.get(self.book_url)
         self._soup_handler = BeautifulSoup(page.content, "html.parser")
         self._extract_table_content()
-        self._initalize_ckass = True
+        self._initalize_class = True
 
     def _extract_table_content(self):
         """Extract the table content from the page of the website"""
