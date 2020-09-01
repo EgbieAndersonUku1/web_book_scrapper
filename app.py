@@ -9,7 +9,6 @@ class BooksToScrapePage(object):
 
     def __init__(self, url):
         self.url = url
-        self._content = None
         self._soup_handler = None
 
     def initalize(self):
@@ -17,8 +16,7 @@ class BooksToScrapePage(object):
         page = requests.get(self.url)
         if page:
             self._soup_handler = BeautifulSoup(page.content, "html.parser")
-            self._content = page.content
-
+           
     @property
     def menu(self):
         """Returns a list of menu categories found on the page"""
